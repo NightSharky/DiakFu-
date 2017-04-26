@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <functional>
 #include <vector>
+#include <cstdio>
 
 int main(int argc, char ** argv)
 {
@@ -58,7 +59,7 @@ int main(int argc, char ** argv)
 			data.resize(fsize);
 			fs.read(&data[0], fsize);
 			fs.close();
-
+			std::remove(tempname.c_str());
 			for (itr = charmap.begin(); itr != charmap.end(); itr++)
 			{
 				found = tempname.find_first_of(itr->first);
